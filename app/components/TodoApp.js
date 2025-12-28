@@ -23,6 +23,10 @@ const [loadingAI, setLoadingAI] = useState(false);
     setTodos([...todos, { task, priority, done: false }]);
     setTask("");
   };
+const removeTodo = (indexToRemove) => {
+  const updated = todos.filter((_, index) => index !== indexToRemove);
+  setTodos(updated);
+};
 
   const filteredTodos = todos.filter(todo => {
     if (filter === "Completed") return todo.done;
@@ -103,9 +107,19 @@ return (
           <span className={`${todo.done ? "line-through text-gray-500" : ""}`}>
             {todo.task}
           </span>
-          <span className="ml-auto text-sm text-gray-600">
-            {todo.priority}
-          </span>
+          <span className="ml-auto flex items-center gap-3">
+  <span className="text-sm text-gray-600">
+    {todo.priority}
+  </span>
+
+  <button
+    onClick={() => removeTodo(index)}
+    className="text-red-500 hover:text-red-700 font-semibold"
+  >
+    ✕
+  </button>
+</span>
+
         </li>
       ))}
     </ul>
