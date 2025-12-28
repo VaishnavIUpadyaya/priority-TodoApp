@@ -1,78 +1,90 @@
-# Priority To-Do App with AI Focus Assistant
+📝 Priority-Based To-Do Web Application
+📌 Project Overview
 
-## 📌 Problem Statement
+This project is a priority-based to-do web application built using Next.js and React. It helps users organize tasks according to priority levels (High, Medium, Low) and focus on the most important pending tasks first. The application also provides an AI-like focus suggestion feature implemented using a custom backend API route.
 
-Students often manage multiple academic and personal tasks but lack
-a structured way to prioritize them. This leads to missed deadlines
-and inefficient task planning.
+🚀 Features
 
-## 💡 Solution
+Add tasks with priority levels (High / Medium / Low)
 
-This project is a **Priority-based To-Do List** built using **Next.js**
-that helps users organize tasks based on importance and completion status.
-It also includes an **AI-powered Focus Assistant** that suggests the most
-important tasks to work on for the day.
+Mark tasks as completed
 
----
+Filter tasks (All, High Priority, Completed)
 
-## 🚀 Features
+Remove tasks
 
-- Add tasks with **High / Medium / Low** priority
-- Mark tasks as completed
-- Filter tasks by:
-  - All
-  - High Priority
-  - Completed
-- Persistent storage using **LocalStorage**
-- **AI Focus Assistant** to recommend daily focus tasks
+Persistent storage using localStorage
 
----
+AI-style “Today’s Focus Tasks” suggestion
 
-## 🤖 AI Focus Assistant
+Clean, responsive UI
 
-The application includes an intelligent focus assistant that analyzes:
+🧠 AI Suggestion Logic (No External AI Used)
 
-- Task priority
-- Completion status
+The application includes a backend API route (/api/ai-focus)
 
-Based on this analysis, it suggests the **top 3 most important pending tasks**
-for the day along with a short productivity message.  
-This helps users make better decisions without manually reviewing all tasks.
+It analyzes the task list and:
 
-> The AI logic is implemented using structured decision-making rules to
-> simulate intelligent task prioritization.
+Filters incomplete tasks
 
----
+Sorts them based on priority
 
-## 🛠 Tech Stack
+Selects the top 3 most important tasks
 
-- **Next.js (App Router)**
-- React (Hooks)
-- JavaScript
-- CSS
-- LocalStorage
+Generates a motivational focus message
 
----
+No Gemini API or external AI service is used
 
-## 📂 Project Structure
+🛠️ Technologies Used
 
-priority-todo/
-├── app/
-│ ├── page.js
-│ ├── layout.js
-│ └── globals.css
-├── components/
+Next.js (App Router)
+
+React
+
+JavaScript
+
+Tailwind CSS
+
+Next.js API Routes
+
+Browser localStorage
+
+📂 Project Structure
+/app
+├── api
+│ └── ai-focus
+│ └── route.js
+├── components
 │ └── TodoApp.js
-├── README.md
-└── package.json
+├── page.js
 
-## ▶️ How to Run the Project
+🔁 How It Works
 
-1. Clone the repository
+User adds tasks with a selected priority.
 
-```bash
-git clone https://github.com/your-username/priority-todo.git
-```
+Tasks are stored in localStorage.
 
+Clicking “AI Suggest Today’s Focus” sends tasks to the backend API.
+
+The API processes tasks and returns a focus message.
+
+The message is displayed on the UI.
+▶️ How to Run the Project
 npm install
 npm run dev
+
+Open in browser:
+
+http://localhost:3000
+
+🎯 Project Type
+
+Web Application
+
+Includes a backend API route
+
+Not dependent on any third-party AI services
+
+✅ Conclusion
+
+This project demonstrates effective task management using priority-based logic, frontend-backend interaction in Next.js, and a simple AI-inspired decision system to improve user productivity.

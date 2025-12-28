@@ -88,7 +88,6 @@ return (
       <button className="filter-btn" onClick={() => setFilter("Completed")}>Completed</button>
     </div>
 
-    {/* Todo List */}
     <ul className="space-y-2">
       {filteredTodos.map((todo, index) => (
         <li
@@ -124,7 +123,6 @@ return (
       ))}
     </ul>
 
-    {/* AI Section */}
     <button
       onClick={getAISuggestion}
       className="mt-6 w-full py-2 bg-blue-300 hover:bg-blue-400 rounded-lg font-medium"
